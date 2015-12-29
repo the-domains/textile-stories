@@ -2,16 +2,23 @@
     <channel>
         <title><![CDATA[Textile Hive Stories]]></title>
         <description><![CDATA[Textile Hive Stories]]></description>
-        <link>http://github.com/dylang/node-rss</link>
+        <link>https://thegrid.ai/textile-stories/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Tue, 29 Dec 2015 00:25:28 GMT</lastBuildDate>
-        <atom:link href="undefinedrss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 29 Dec 2015 00:47:28 GMT</lastBuildDate>
+        <atom:link href="https://thegrid.ai/textile-stories/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Meisen Magic]]></title>
             <description><![CDATA[<article><h1>Meisen Magic</h1><p>How Textiles Could Revolutionize Big Data (again)</p><img src="https://s3-us-west-2.amazonaws.com/the-grid-img/p/dfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg"></article>]]></description>
-            <link>undefinedmeisen-magic/index.html</link>
+            <link>https://thegrid.ai/textile-stories/meisen-magic/index.html</link>
             <guid isPermaLink="false">e0f26e99-bf12-4067-a90e-403fb57885c9</guid>
             <pubDate>Tue, 29 Dec 2015 00:25:15 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Article 2]]></title>
+            <description><![CDATA[<article><h1>Article 2</h1><img src="https://the-grid-user-content.s3-us-west-2.amazonaws.com/2095e33a-a7f2-4122-b65d-0150959ea3c9.jpg"></article>]]></description>
+            <link>https://thegrid.ai/textile-stories/article-2/index.html</link>
+            <guid isPermaLink="false">6d8f62cc-423e-4e30-b731-22b8503ba2ca</guid>
+            <pubDate>Tue, 29 Dec 2015 00:47:13 GMT</pubDate>
         </item>
     </channel>
 </rss>
