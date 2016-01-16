@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Meisen Magic - Textile Stories</title><link href="../rss.xml" title="Textile Hive Stories feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="f98f545e-2bd9-4c06-abb1-9cc9f4c5b4c7"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Meisen Magic - Textile Stories</title><link href="../rss.xml" title="Textile Hive Stories feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.17"><meta name="the-grid-solution" content="5353c220-97e6-4aba-8868-ab81869ddde2"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -203,13 +203,6 @@ body {
 .stack {
   z-index: 1;
   transition: transform 0.3s ease-out;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-}
-.group,
-.aside,
-.decoration {
-  transition: transform 0.3s ease-out;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -270,10 +263,6 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
-.media iframe {
-  transition: 0.3s opacity ease-in;
-  -webkit-transition: 0.3s opacity ease-in;
-}
 h1 a,
 h2 a,
 h3 a {
@@ -294,15 +283,11 @@ a {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-.text li {
-  margin-left: 1.5em;
-}
 .decoration {
   pointer-events: none;
 }
 .svg {
   position: relative;
-  background-color: currentColor;
 }
 .svg > svg {
   position: absolute;
@@ -328,6 +313,9 @@ a {
 .svg polyline {
   stroke: currentColor;
 }
+.decoration {
+  background-color: currentColor;
+}
 .svg {
   background-color: transparent;
 }
@@ -343,12 +331,39 @@ a {
   background-color: currentColor;
   content: "";
 }
-.colors-style-aside-border .publisher,
-.colors-style-aside-border .author {
-  padding: .4vw .6vw;
+.revealed,
+.revealed > * {
+  pointer-events: none;
 }
-.cover_only_header:first-of-type {
-  position: fixed;
+.revealed .aside,
+.revealed a {
+  pointer-events: all;
+}
+.revealed {
+  background-image: none !important;
+  background-color: none !important;
+}
+.stack,
+.group,
+.aside,
+.decoration,
+.media,
+html body a.media,
+.media img,
+.media picture,
+iframe {
+  min-width: 0;
+  min-height: 0;
+  transition-duration: .3s;
+  transition-property: transform, color, background-color, opacity, clip, z-index, border-width;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: .3s;
+  -webkit-transition-property: -webkit-transform, color, background-color, opacity, clip, z-index, border-width;
+  -webkit-transition-timing-function: ease-out;
+}
+.media img {
+  transition-property: transform, color, background-color;
+  -webkit-transition-property: -webkit-transform, color, background-color;
 }
 .decoration {
   z-index: 3;
@@ -361,7 +376,7 @@ ul {
 }
 .panel .heading {
   text-transform: uppercase;
-  letter-spacing: .03rem;
+  letter-spacing: 1px;
 }
 .listing:not(.open) .shadow-overlay {
   pointer-events: none;
@@ -376,17 +391,6 @@ ul {
 .group .text,
 .group .aside {
   z-index: 2;
-}
-.group button {
-  border-radius: 3px;
-  padding: 15px 25px;
-  margin-top: 36px;
-}
-.group button:hover {
-  opacity: .8;
-}
-.group .attribution {
-  overflow: hidden;
 }
 .group .attribution:after {
   display: block;
@@ -459,6 +463,7 @@ ul {
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 4.324rem; position: absolute; top: 0rem; left: 0.124rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading { background-color: rgb(245, 244, 239); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:active { color: rgb(0, 0, 0); }
@@ -487,6 +492,7 @@ ul {
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed { background-color: rgb(245, 244, 240); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a { color: rgb(97, 90, 83); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:hover { color: rgb(204, 204, 204); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:active { color: rgb(255, 255, 255); }
@@ -499,6 +505,7 @@ ul {
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column { background-color: rgb(245, 244, 240); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a { color: rgb(97, 90, 83); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:hover { color: rgb(204, 204, 204); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:active { color: rgb(255, 255, 255); }
@@ -516,6 +523,7 @@ ul {
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed { background-color: rgb(245, 244, 240); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a { color: rgb(97, 90, 83); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:hover { color: rgb(204, 204, 204); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:active { color: rgb(255, 255, 255); }
@@ -529,6 +537,7 @@ ul {
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column { background-color: rgb(245, 244, 240); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a { color: rgb(97, 90, 83); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:hover { color: rgb(204, 204, 204); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:active { color: rgb(255, 255, 255); }
@@ -541,6 +550,7 @@ ul {
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column { background-color: rgb(245, 244, 240); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a { color: rgb(97, 90, 83); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:hover { color: rgb(204, 204, 204); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:active { color: rgb(255, 255, 255); }
@@ -557,6 +567,7 @@ ul {
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed { background-color: rgb(245, 244, 240); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a { color: rgb(97, 90, 83); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:hover { color: rgb(204, 204, 204); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:active { color: rgb(255, 255, 255); }
@@ -569,6 +580,7 @@ ul {
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column { background-color: rgb(245, 244, 240); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a { color: rgb(97, 90, 83); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:hover { color: rgb(204, 204, 204); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:active { color: rgb(255, 255, 255); }
@@ -583,6 +595,7 @@ ul {
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column { background-color: rgb(245, 244, 240); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a { color: rgb(97, 90, 83); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:hover { color: rgb(204, 204, 204); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:active { color: rgb(255, 255, 255); }
@@ -598,6 +611,7 @@ ul {
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column { background-color: rgb(245, 244, 240); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a { color: rgb(97, 90, 83); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:hover { color: rgb(204, 204, 204); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:active { color: rgb(255, 255, 255); }
@@ -610,6 +624,7 @@ ul {
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column { background-color: rgb(245, 244, 240); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a { color: rgb(97, 90, 83); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:hover { color: rgb(204, 204, 204); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:active { color: rgb(255, 255, 255); }
@@ -624,6 +639,7 @@ ul {
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 3.844rem; position: absolute; top: 0rem; left: 0.124rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading { background-color: rgb(244, 244, 241); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:active { color: rgb(0, 0, 0); }
@@ -654,6 +670,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 6.484rem; position: absolute; top: 0rem; left: 0.184rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading { background-color: rgb(245, 244, 239); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:active { color: rgb(0, 0, 0); }
@@ -682,6 +699,7 @@ display: none;
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed { background-color: rgb(245, 244, 240); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a { color: rgb(97, 90, 83); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:hover { color: rgb(204, 204, 204); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:active { color: rgb(255, 255, 255); }
@@ -694,6 +712,7 @@ display: none;
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column { background-color: rgb(245, 244, 240); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a { color: rgb(97, 90, 83); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:hover { color: rgb(204, 204, 204); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:active { color: rgb(255, 255, 255); }
@@ -711,6 +730,7 @@ display: none;
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed { background-color: rgb(245, 244, 240); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a { color: rgb(97, 90, 83); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:hover { color: rgb(204, 204, 204); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:active { color: rgb(255, 255, 255); }
@@ -724,6 +744,7 @@ display: none;
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column { background-color: rgb(245, 244, 240); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a { color: rgb(97, 90, 83); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:hover { color: rgb(204, 204, 204); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:active { color: rgb(255, 255, 255); }
@@ -736,6 +757,7 @@ display: none;
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column { background-color: rgb(245, 244, 240); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a { color: rgb(97, 90, 83); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:hover { color: rgb(204, 204, 204); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:active { color: rgb(255, 255, 255); }
@@ -752,6 +774,7 @@ display: none;
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed { background-color: rgb(245, 244, 240); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a { color: rgb(97, 90, 83); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:hover { color: rgb(204, 204, 204); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:active { color: rgb(255, 255, 255); }
@@ -764,6 +787,7 @@ display: none;
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column { background-color: rgb(245, 244, 240); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a { color: rgb(97, 90, 83); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:hover { color: rgb(204, 204, 204); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:active { color: rgb(255, 255, 255); }
@@ -778,6 +802,7 @@ display: none;
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column { background-color: rgb(245, 244, 240); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a { color: rgb(97, 90, 83); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:hover { color: rgb(204, 204, 204); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:active { color: rgb(255, 255, 255); }
@@ -793,6 +818,7 @@ display: none;
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column { background-color: rgb(245, 244, 240); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a { color: rgb(97, 90, 83); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:hover { color: rgb(204, 204, 204); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:active { color: rgb(255, 255, 255); }
@@ -805,6 +831,7 @@ display: none;
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column { background-color: rgb(245, 244, 240); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a { color: rgb(97, 90, 83); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:hover { color: rgb(204, 204, 204); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:active { color: rgb(255, 255, 255); }
@@ -819,6 +846,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 5.764rem; position: absolute; top: 0rem; left: 0.184rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading { background-color: rgb(244, 244, 241); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:active { color: rgb(0, 0, 0); }
@@ -849,6 +877,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 8.644rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading { background-color: rgb(245, 244, 239); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:active { color: rgb(0, 0, 0); }
@@ -877,6 +906,7 @@ display: none;
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed { background-color: rgb(245, 244, 240); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a { color: rgb(97, 90, 83); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:hover { color: rgb(204, 204, 204); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:active { color: rgb(255, 255, 255); }
@@ -889,6 +919,7 @@ display: none;
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column { background-color: rgb(245, 244, 240); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a { color: rgb(97, 90, 83); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:hover { color: rgb(204, 204, 204); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:active { color: rgb(255, 255, 255); }
@@ -906,6 +937,7 @@ display: none;
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed { background-color: rgb(245, 244, 240); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a { color: rgb(97, 90, 83); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:hover { color: rgb(204, 204, 204); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:active { color: rgb(255, 255, 255); }
@@ -919,6 +951,7 @@ display: none;
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column { background-color: rgb(245, 244, 240); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a { color: rgb(97, 90, 83); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:hover { color: rgb(204, 204, 204); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:active { color: rgb(255, 255, 255); }
@@ -931,6 +964,7 @@ display: none;
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column { background-color: rgb(245, 244, 240); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a { color: rgb(97, 90, 83); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:hover { color: rgb(204, 204, 204); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:active { color: rgb(255, 255, 255); }
@@ -947,6 +981,7 @@ display: none;
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed { background-color: rgb(245, 244, 240); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a { color: rgb(97, 90, 83); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:hover { color: rgb(204, 204, 204); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:active { color: rgb(255, 255, 255); }
@@ -959,6 +994,7 @@ display: none;
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column { background-color: rgb(245, 244, 240); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a { color: rgb(97, 90, 83); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:hover { color: rgb(204, 204, 204); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:active { color: rgb(255, 255, 255); }
@@ -973,6 +1009,7 @@ display: none;
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column { background-color: rgb(245, 244, 240); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a { color: rgb(97, 90, 83); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:hover { color: rgb(204, 204, 204); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:active { color: rgb(255, 255, 255); }
@@ -988,6 +1025,7 @@ display: none;
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column { background-color: rgb(245, 244, 240); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a { color: rgb(97, 90, 83); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:hover { color: rgb(204, 204, 204); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:active { color: rgb(255, 255, 255); }
@@ -1000,6 +1038,7 @@ display: none;
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column { background-color: rgb(245, 244, 240); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a { color: rgb(97, 90, 83); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:hover { color: rgb(204, 204, 204); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:active { color: rgb(255, 255, 255); }
@@ -1014,6 +1053,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 7.684rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading { background-color: rgb(244, 244, 241); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:active { color: rgb(0, 0, 0); }
@@ -1044,6 +1084,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 12.964rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading { background-color: rgb(245, 244, 239); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:active { color: rgb(0, 0, 0); }
@@ -1072,6 +1113,7 @@ display: none;
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed { background-color: rgb(245, 244, 240); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a { color: rgb(97, 90, 83); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:hover { color: rgb(204, 204, 204); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:active { color: rgb(255, 255, 255); }
@@ -1084,6 +1126,7 @@ display: none;
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column { background-color: rgb(245, 244, 240); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a { color: rgb(97, 90, 83); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:hover { color: rgb(204, 204, 204); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:active { color: rgb(255, 255, 255); }
@@ -1101,6 +1144,7 @@ display: none;
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed { background-color: rgb(245, 244, 240); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a { color: rgb(97, 90, 83); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:hover { color: rgb(204, 204, 204); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:active { color: rgb(255, 255, 255); }
@@ -1114,6 +1158,7 @@ display: none;
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column { background-color: rgb(245, 244, 240); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a { color: rgb(97, 90, 83); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:hover { color: rgb(204, 204, 204); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:active { color: rgb(255, 255, 255); }
@@ -1126,6 +1171,7 @@ display: none;
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column { background-color: rgb(245, 244, 240); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a { color: rgb(97, 90, 83); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:hover { color: rgb(204, 204, 204); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:active { color: rgb(255, 255, 255); }
@@ -1142,6 +1188,7 @@ display: none;
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed { background-color: rgb(245, 244, 240); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a { color: rgb(97, 90, 83); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:hover { color: rgb(204, 204, 204); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:active { color: rgb(255, 255, 255); }
@@ -1154,6 +1201,7 @@ display: none;
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column { background-color: rgb(245, 244, 240); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a { color: rgb(97, 90, 83); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:hover { color: rgb(204, 204, 204); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:active { color: rgb(255, 255, 255); }
@@ -1168,6 +1216,7 @@ display: none;
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column { background-color: rgb(245, 244, 240); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a { color: rgb(97, 90, 83); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:hover { color: rgb(204, 204, 204); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:active { color: rgb(255, 255, 255); }
@@ -1183,6 +1232,7 @@ display: none;
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column { background-color: rgb(245, 244, 240); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a { color: rgb(97, 90, 83); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:hover { color: rgb(204, 204, 204); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:active { color: rgb(255, 255, 255); }
@@ -1195,6 +1245,7 @@ display: none;
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column { background-color: rgb(245, 244, 240); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a { color: rgb(97, 90, 83); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:hover { color: rgb(204, 204, 204); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:active { color: rgb(255, 255, 255); }
@@ -1209,6 +1260,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 11.524rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading { background-color: rgb(244, 244, 241); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:active { color: rgb(0, 0, 0); }
@@ -1239,6 +1291,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading { background-color: rgb(245, 244, 239); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:active { color: rgb(0, 0, 0); }
@@ -1267,6 +1320,7 @@ display: none;
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed { background-color: rgb(245, 244, 240); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a { color: rgb(97, 90, 83); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:hover { color: rgb(204, 204, 204); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:active { color: rgb(255, 255, 255); }
@@ -1279,6 +1333,7 @@ display: none;
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column { background-color: rgb(245, 244, 240); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a { color: rgb(97, 90, 83); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:hover { color: rgb(204, 204, 204); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:active { color: rgb(255, 255, 255); }
@@ -1296,6 +1351,7 @@ display: none;
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed { background-color: rgb(245, 244, 240); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a { color: rgb(97, 90, 83); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:hover { color: rgb(204, 204, 204); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:active { color: rgb(255, 255, 255); }
@@ -1309,6 +1365,7 @@ display: none;
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column { background-color: rgb(245, 244, 240); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a { color: rgb(97, 90, 83); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:hover { color: rgb(204, 204, 204); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:active { color: rgb(255, 255, 255); }
@@ -1321,6 +1378,7 @@ display: none;
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column { background-color: rgb(245, 244, 240); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a { color: rgb(97, 90, 83); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:hover { color: rgb(204, 204, 204); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:active { color: rgb(255, 255, 255); }
@@ -1337,6 +1395,7 @@ display: none;
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed { background-color: rgb(245, 244, 240); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a { color: rgb(97, 90, 83); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:hover { color: rgb(204, 204, 204); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:active { color: rgb(255, 255, 255); }
@@ -1349,6 +1408,7 @@ display: none;
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column { background-color: rgb(245, 244, 240); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a { color: rgb(97, 90, 83); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:hover { color: rgb(204, 204, 204); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:active { color: rgb(255, 255, 255); }
@@ -1363,6 +1423,7 @@ display: none;
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column { background-color: rgb(245, 244, 240); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a { color: rgb(97, 90, 83); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:hover { color: rgb(204, 204, 204); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:active { color: rgb(255, 255, 255); }
@@ -1378,6 +1439,7 @@ display: none;
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column { background-color: rgb(245, 244, 240); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a { color: rgb(97, 90, 83); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:hover { color: rgb(204, 204, 204); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:active { color: rgb(255, 255, 255); }
@@ -1390,6 +1452,7 @@ display: none;
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column { background-color: rgb(245, 244, 240); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a { color: rgb(97, 90, 83); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:hover { color: rgb(204, 204, 204); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:active { color: rgb(255, 255, 255); }
@@ -1404,6 +1467,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 14.404rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading { background-color: rgb(244, 244, 241); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:active { color: rgb(0, 0, 0); }
@@ -1434,6 +1498,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav .group.heading { background-color: rgb(245, 244, 239); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav a:active { color: rgb(0, 0, 0); }
@@ -1462,6 +1527,7 @@ display: none;
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa .group.mixed { background-color: rgb(245, 244, 240); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a { color: rgb(97, 90, 83); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:hover { color: rgb(204, 204, 204); }
 #u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa#u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa a:active { color: rgb(255, 255, 255); }
@@ -1474,6 +1540,7 @@ display: none;
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd .group.column { background-color: rgb(245, 244, 240); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a { color: rgb(97, 90, 83); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:hover { color: rgb(204, 204, 204); }
 #u-8902b540-fa72-4b2e-ad04-a6d7e11564cd#u-8902b540-fa72-4b2e-ad04-a6d7e11564cd a:active { color: rgb(255, 255, 255); }
@@ -1491,6 +1558,7 @@ display: none;
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba .group.mixed { background-color: rgb(245, 244, 240); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a { color: rgb(97, 90, 83); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:hover { color: rgb(204, 204, 204); }
 #u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba#u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba a:active { color: rgb(255, 255, 255); }
@@ -1504,6 +1572,7 @@ display: none;
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 .group.column { background-color: rgb(245, 244, 240); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a { color: rgb(97, 90, 83); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:hover { color: rgb(204, 204, 204); }
 #u-f052de7c-d7fa-4afa-8c5c-796748e157a2#u-f052de7c-d7fa-4afa-8c5c-796748e157a2 a:active { color: rgb(255, 255, 255); }
@@ -1516,6 +1585,7 @@ display: none;
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 .group.column { background-color: rgb(245, 244, 240); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a { color: rgb(97, 90, 83); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:hover { color: rgb(204, 204, 204); }
 #u-14e34720-aa15-4d84-83f0-bf7330e19430#u-14e34720-aa15-4d84-83f0-bf7330e19430 a:active { color: rgb(255, 255, 255); }
@@ -1532,6 +1602,7 @@ display: none;
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph { color: rgb(42, 38, 34); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c .group.mixed { background-color: rgb(245, 244, 240); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a { color: rgb(97, 90, 83); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:hover { color: rgb(204, 204, 204); }
 #u-806cc82d-a97e-4b09-abbc-19b795ef1b1c#u-806cc82d-a97e-4b09-abbc-19b795ef1b1c a:active { color: rgb(255, 255, 255); }
@@ -1544,6 +1615,7 @@ display: none;
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf .group.column { background-color: rgb(245, 244, 240); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a { color: rgb(97, 90, 83); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:hover { color: rgb(204, 204, 204); }
 #u-b3ba6d70-46ce-41f4-aed3-f933c4294adf#u-b3ba6d70-46ce-41f4-aed3-f933c4294adf a:active { color: rgb(255, 255, 255); }
@@ -1558,6 +1630,7 @@ display: none;
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 .group.column { background-color: rgb(245, 244, 240); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a { color: rgb(97, 90, 83); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:hover { color: rgb(204, 204, 204); }
 #u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9#u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9 a:active { color: rgb(255, 255, 255); }
@@ -1573,6 +1646,7 @@ display: none;
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e .group.column { background-color: rgb(245, 244, 240); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a { color: rgb(97, 90, 83); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:hover { color: rgb(204, 204, 204); }
 #u-99a06781-ea74-486d-ad3e-89cb8f14f14e#u-99a06781-ea74-486d-ad3e-89cb8f14f14e a:active { color: rgb(255, 255, 255); }
@@ -1585,6 +1659,7 @@ display: none;
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph { color: rgb(42, 38, 34); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a { color: rgb(125, 120, 116); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column > .text.paragraph a:hover { color: rgb(157, 154, 149); }
+#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 .group.column { background-color: rgb(245, 244, 240); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a { color: rgb(97, 90, 83); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:hover { color: rgb(204, 204, 204); }
 #u-c0dfad2c-3682-424c-9d24-918ce97bc5f9#u-c0dfad2c-3682-424c-9d24-918ce97bc5f9 a:active { color: rgb(255, 255, 255); }
@@ -1599,6 +1674,7 @@ display: none;
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 14.404rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline { color: rgb(52, 52, 50); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading > .title.headline a:hover { color: rgb(108, 80, 72); }
+#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate .group.heading { background-color: rgb(244, 244, 241); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a { color: rgb(230, 149, 130); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:hover { color: rgb(0, 0, 0); }
 #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate#u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate a:active { color: rgb(0, 0, 0); }
@@ -1616,7 +1692,7 @@ wbr.w1800{ display: block }
  #u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-3 {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-17a575ca-f9bd-44b8-a91e-d96db6b5579b"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text media_lt_wide media_lt_full w_medium_paragraph w_medium_text layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-3-l-one"></div><style id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-color">body{background-color: rgba(232, 232, 227, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav"><div kind="group" index="heading" class="group heading group heading" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline-a">Textile Hive Stories</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack mixed i first_chapter w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text stack mixed" itemid="f60dd04e-d16a-44e6-aa22-3aa6d117cefa" itemtype="text" diff_index="0" index="mixed" kind="stack" score="5.875" missed="0.125" tag="article" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa"><div kind="group" index="mixed" class="group mixed group mixed" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed"><a kind="media" index="cover" class="vfld media cover media cover" specificity="0.25" itemprop="cover" max-width="3843" max-height="3159" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/dfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-m-cover"><picture id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/b57b533834f52236145bdbbc36242707/passthrough.jpg?height=592&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/3e8c8bb2a323610e3764059ea100ff7f/passthrough.jpg?height=1184&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1440 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e134a0288e650e5bc96830e86ea15ca2/passthrough.jpg?height=593&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/07e79b5bc8729f2fef89e0279d9121b3/passthrough.jpg?height=1186&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1440 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/afb0c8a5679c37a7cfef43858e879aaf/passthrough.jpg?height=316&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=385, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/6b6aad1eb69abaa5e03d5baaae24cb6e/passthrough.jpg?height=632&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=770 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5d8c9b87538886571734300279941750/passthrough.jpg?height=474&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c48e1d48c365a6f502b82896132a8cc6/passthrough.jpg?height=948&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1152 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/afb0c8a5679c37a7cfef43858e879aaf/passthrough.jpg?height=316&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=385, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/6b6aad1eb69abaa5e03d5baaae24cb6e/passthrough.jpg?height=632&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=770 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5d8c9b87538886571734300279941750/passthrough.jpg?height=474&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c48e1d48c365a6f502b82896132a8cc6/passthrough.jpg?height=948&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1152 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-headline"><span class="text-decoration" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-headline-span">Meisen Magic</span></h1><h2 kind="title" index="subtitle" class="short short_subtitle short_title title subtitle title subtitle" specificity="0.25" itemprop="subtitle" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-subtitle"><span class="text-decoration" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-subtitle-span">What do you see in this fabric?</span></h2><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-paragraph"><p><span class="first-letter">L</span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>eaves appear suspended in a misty atmosphere, but <wbr class="w480 w960"></wbr>that&#x2019;s only the beginning. <wbr class="w1799"></wbr>You&#x2019;re <wbr class="w481 w961"></wbr>actually witnessing <wbr class="w480 w960"></wbr>the <wbr class="w1800"></wbr>collision of two pattern planes, one on the surface <wbr class="w1799"></wbr>and <wbr class="w480 w960"></wbr>one in <wbr class="w481 w961"></wbr>the structure, that seamlessly blend thousands of <wbr class="w480 w960 w1800"></wbr>threads for a stunning <wbr class="w1799"></wbr>visual effect. The <wbr class="w481 w961"></wbr>pattern seems to <wbr class="w480 w960"></wbr>hover in space, challenging your eye&#x2019;s perception. It&#x2019;s <wbr class="w1799"></wbr>an <wbr class="w480 w960 w1800"></wbr>optical illusion, <wbr class="w481 w961"></wbr>and like most good magic tricks, its secrets <wbr class="w480 w960"></wbr>are hidden in plain sight, <wbr class="w1799"></wbr>if you know where <wbr class="w481 w961"></wbr>to look.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>R</span>efocusing perception is the subject of <a data-grid-id="1d2a2068-7446-4b81-b715-35da2560aaa2" href="http://www.nytimes.com/2015/03/29/sunday-review/learning-to-see-data.html?_r=0">The New York <wbr class="w480 w960"></wbr>Times&#x2019; article, &#x201C;Learning to See <wbr class="w481 w961 w1799"></wbr>Data.&#x201D;</a>Scientific research <wbr class="w480 w960 w1800"></wbr>increasingly depends on massive quantities of digitized <wbr class="w480 w481 w960 w961 w1799"></wbr>information. In order to use it more effectively, analysts <wbr class="w480 w960"></wbr>and <wbr class="w1800"></wbr>artists are collaborating to <wbr class="w481 w961 w1799"></wbr>develop a system of <wbr class="w480 w960"></wbr>specialized pattern identification. However, textiles already <wbr class="w480 w960"></wbr>offer <wbr class="w1799"></wbr>an <wbr class="w481 w961 w1800"></wbr>encyclopedic catalog of patterns, and a nuanced <wbr class="w480 w960"></wbr>perceptual language for those who <wbr class="w481 w961 w1799"></wbr>understand it.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="8902b540-fa72-4b2e-ad04-a6d7e11564cd" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-8902b540-fa72-4b2e-ad04-a6d7e11564cd"><div kind="group" index="column" class="group column group column" id="u-8902b540-fa72-4b2e-ad04-a6d7e11564cd-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-8902b540-fa72-4b2e-ad04-a6d7e11564cd-g-column-t-paragraph"><p><span class="first-letter">A</span>da Lovelace, the 19th century inventor of computer <wbr class="w480 w960"></wbr>programming, realized this <wbr class="w481 w961 w1799"></wbr>connection between data <wbr class="w480 w960"></wbr>systems <wbr class="w1800"></wbr>and weaving. She wrote, &#x201C;The Analytical Engine <wbr class="w480 w960 w1799"></wbr>weaves <wbr class="w481 w961"></wbr>algebraic patterns just as the Jacquard loom weaves <wbr class="w480 w960"></wbr>flowers <wbr class="w1800"></wbr>and leaves.&#x201D; She <wbr class="w1799"></wbr>understood <wbr class="w481 w961"></wbr>how a matrix of pixels <wbr class="w480 w960"></wbr>could be organized into a type of language used to <wbr class="w480 w960 w1799"></wbr>mechanize <wbr class="w481 w961 w1800"></wbr>actions, just as Jacquard punch cards told the <wbr class="w480 w960"></wbr>loom what pattern to <wbr class="w1799"></wbr>construct. <wbr class="w481"></wbr>Continuing <wbr class="w961"></wbr>with this <wbr class="w480 w960"></wbr>analogy of <wbr class="w1800"></wbr>language/structure, could programmers <wbr class="w1799"></wbr>today <wbr class="w480 w960"></wbr>learn <wbr class="w481"></wbr>valuable models <wbr class="w961"></wbr>from other types of textile design?</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack mixed i w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_lt_wide media_lt_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="0cd1a66f-b856-47ae-bcf9-dfebb24adfba" itemtype="text" diff_index="0" index="mixed" kind="stack" score="3.625" missed="0.375" tag="article" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba"><div kind="group" index="mixed" class="group mixed group mixed" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="800" max-height="552" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed-m-cover"><picture id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/973acee721748a295efee6e60da48eef/passthrough.jpg?height=497&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/a8da090151562b070bb94fd043154f54/passthrough.jpg?height=497&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=721, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/391915fd82b3950e263f1943a93ee829/passthrough.jpg?height=265&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=385, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/16372b72be7d211ac7917f11955fccce/passthrough.jpg?height=530&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=770 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/46f503465f682f911f1304ae1332d5b6/passthrough.jpg?height=398&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f757746a2cb6df4fc19f95616108521e/passthrough.jpg?height=265&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=384, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/d46aa80d266778c7b874de891b0951bb/passthrough.jpg?height=530&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=768 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/aeab4c617ee12fb0558eccf8a66bbee6/passthrough.jpg?height=398&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=577, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed-t-paragraph"><p><span class="first-letter">F</span>or example, this Meisen fabric from the <a data-grid-id="e637a2a3-d64a-4c6e-a9f7-5a40a2061136" href="http://textilehive.com/pages/the-collection">Andrea Aranow <wbr class="w480 w960"></wbr>Collection</a> found at <a data-grid-id="3c1ba486-b13f-4718-a79a-48760975b0b2" href="www.textilehive.com">Textile <wbr class="w481 w961 w1799"></wbr>Hive</a> represents a style of <wbr class="w480 w960 w1800"></wbr>Japanese kimono fabric popular during the 1920s and 30s. <wbr class="w480 w960 w1799"></wbr>With <wbr class="w481 w961"></wbr>Japanese fabrics especially, understanding how <wbr class="w480 w960 w1800"></wbr>they&#x2019;re made is like glimpsing a <wbr class="w1799"></wbr>profound <wbr class="w481 w961"></wbr>insight into the <wbr class="w480 w960"></wbr>designer&#x2019;s creative process. They use pattern as a poetic <wbr class="w480 w960 w1799 w1800"></wbr>language, <wbr class="w481 w961"></wbr>evoking shapes, rhythm, and space in <wbr class="w480 w960"></wbr>unexpected juxtaposition. Their <wbr class="w1799"></wbr>sleight-of-hand <wbr class="w481 w961"></wbr>visual <wbr class="w480 w960"></wbr>tricks <wbr class="w1800"></wbr>purposefully confound the ability to see what&#x2019;s truly <wbr class="w480 w960 w1799"></wbr>happening, so look <wbr class="w481 w961"></wbr>carefully.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>W</span>hat we see is a highly complex, layered pattern that at first <wbr class="w480 w960"></wbr>glance suggests <a data-grid-id="1fe33e3f-c4dc-469b-8389-f32e5fecac2c" href="http://www.vam.ac.uk/content/videos/j/video-jacquard-weaving/">a woven <wbr class="w481 w961 w1799"></wbr>Jacquard structure</a>. Upon <wbr class="w1800"></wbr>closer <wbr class="w480 w960"></wbr>inspection, the tiny yarns appear organized in the <wbr class="w1799"></wbr>basic <wbr class="w480 w481 w960 w961"></wbr>over-and-under sequence of plain weave. How can this <wbr class="w1800"></wbr>be? <wbr class="w480 w960"></wbr>The yarn is so fine that <wbr class="w1799"></wbr>we <wbr class="w481 w961"></wbr>need magnification to see the <wbr class="w480 w960"></wbr>true architecture of the weave.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="f052de7c-d7fa-4afa-8c5c-796748e157a2" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-f052de7c-d7fa-4afa-8c5c-796748e157a2"><div kind="group" index="column" class="group column group column" id="u-f052de7c-d7fa-4afa-8c5c-796748e157a2-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-f052de7c-d7fa-4afa-8c5c-796748e157a2-g-column-t-paragraph"><p><span class="first-letter">T</span>he warp-dominated plain weave gives us the first clue that <wbr class="w480 w960"></wbr>this is a Meisen fabric. <wbr class="w481 w961 w1799"></wbr>Amazingly, the entire leaf pattern <wbr class="w1800"></wbr>is <wbr class="w480 w960"></wbr>printed on these warp yarns only. They&#x2019;ve been <wbr class="w481 w961 w1799"></wbr>stretched <wbr class="w480 w960"></wbr>out first on a frame and loosely pre-woven. Then, colorful <wbr class="w480 w960 w1800"></wbr>dyes were stenciled <wbr class="w481 w961 w1799"></wbr>onto their surface to create the pattern <wbr class="w480 w960"></wbr>of pink and gray leaves.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>O</span>n an alternate frame, narrowly striped warp yarns in <wbr class="w480 w960"></wbr>contrasting shades of dark and <wbr class="w481 w961 w1799"></wbr>light gray are measured to <wbr class="w480 w960"></wbr>the <wbr class="w1800"></wbr>same length as the printed set of warps. These striped <wbr class="w480 w960 w1799"></wbr>yarns <wbr class="w481 w961"></wbr>supply the shadow weave effect in the finished fabric.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="14e34720-aa15-4d84-83f0-bf7330e19430" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-14e34720-aa15-4d84-83f0-bf7330e19430"><div kind="group" index="column" class="group column group column" id="u-14e34720-aa15-4d84-83f0-bf7330e19430-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-14e34720-aa15-4d84-83f0-bf7330e19430-g-column-t-paragraph"><p><span class="first-letter">N</span>ext, the stenciled warps are unwoven and strung onto a <wbr class="w480 w960"></wbr>weaving loom, with the <wbr class="w481 w961 w1799"></wbr>dark/light warp stripes alternated <wbr class="w480 w960 w1800"></wbr>throughout the pattern every three threads. After <wbr class="w1799"></wbr>this <wbr class="w481 w961"></wbr>time-<wbr class="w480 w960"></wbr>consuming labor, similarly striped weft yarns bring it all <wbr class="w480 w960 w1800"></wbr>together in a simple <wbr class="w1799"></wbr>plain <wbr class="w481 w961"></wbr>weave. Tiny crosshatches <wbr class="w480 w960"></wbr>populate the background, resulting from the dark/light <wbr class="w480 w960 w1799"></wbr>stripe <wbr class="w481 w961 w1800"></wbr>sequence in the weft meeting the dark/light stripes <wbr class="w480"></wbr>in <wbr class="w960"></wbr>the warp at right angles. <wbr class="w1799"></wbr>(John <wbr class="w481 w961"></wbr>Marshall&#x2019;s excellent blog <wbr class="w480"></wbr>post <wbr class="w960"></wbr>on <wbr class="w1800"></wbr>the <a data-grid-id="866d0a30-2873-4103-a2bd-674a7069d68f" href="http://johnmarshall.to/blog/2012/05/10/textile-of-the-weekmeisen-gasuri-%E9%8A%98%E4%BB%99%E7%B5%A3-201219/">Meisen process</a> helps explain these <wbr class="w480 w1799"></wbr>techniques.)</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack mixed i w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_lt_wide media_lt_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="806cc82d-a97e-4b09-abbc-19b795ef1b1c" itemtype="image" diff_index="0" index="mixed" kind="stack" score="3.625" missed="0.375" tag="article" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c"><div kind="group" index="mixed" class="group mixed group mixed" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="800" max-height="450" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed-m-cover"><picture id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" media="(min-width: 1441px)" /><source srcset="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" media="(min-width: 721px)" /><source srcset="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" media="(min-width: 1px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed-t-paragraph"><p><span class="first-letter">L</span>ustrous silk yarn and a pearlescent color palette add to the <wbr class="w480 w960"></wbr>visual intrigue with subtle, <wbr class="w481 w961 w1799"></wbr>reflective qualities. Three <wbr class="w480 w960 w1800"></wbr>shades of gray stripes flicker across the pattern, challenging <wbr class="w480 w481 w960 w961 w1799"></wbr>your mind&#x2019;s eye to complete the leaf shapes and <wbr class="w1800"></wbr>understand <wbr class="w480 w960"></wbr>their spatial relationship. <wbr class="w481 w1799"></wbr>The <wbr class="w961"></wbr>leaves seem to be falling <wbr class="w480 w960"></wbr>through air, and almost twisting in the light as <wbr class="w1800"></wbr>silvery <wbr class="w1799"></wbr>yarns <wbr class="w480 w481 w960 w961"></wbr>reflect the image. The pattern permeates the cloth, <wbr class="w480 w960"></wbr>involving the 3D structure as <wbr class="w1799"></wbr>well as <wbr class="w481 w961"></wbr>the 2D image. <wbr class="w480 w960 w1800"></wbr>Combining shadow weave stripes with stenciled warp <wbr class="w480 w960"></wbr>yarns, this <wbr class="w1799"></wbr>Meisen <wbr class="w481 w961"></wbr>fabric creates a masterful depiction of <wbr class="w480 w960"></wbr>space <wbr class="w1800"></wbr>that goes beyond its surface into <wbr class="w1799"></wbr>aesthetic <wbr class="w480 w481 w960 w961"></wbr>dimensions that fool and delight your eyes.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="b3ba6d70-46ce-41f4-aed3-f933c4294adf" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-b3ba6d70-46ce-41f4-aed3-f933c4294adf"><div kind="group" index="column" class="group column group column" id="u-b3ba6d70-46ce-41f4-aed3-f933c4294adf-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-b3ba6d70-46ce-41f4-aed3-f933c4294adf-g-column-t-paragraph"><p><span class="first-letter">A</span>n eloquent language of textile pattern exists in plain view, <wbr class="w480 w960"></wbr>hidden from most people <wbr class="w481 w961 w1799"></wbr>because they simply don&#x2019;t know <wbr class="w480 w960 w1800"></wbr>what to look for. The article, <a href="http://www.nytimes.com/2015/03/29/sunday-review/learning-to-see-data.html?_r=0#story-continues-6" data-href="http://www.nytimes.com/2015/03/29/sunday-review/learning-to-see-data.html?_r=0#story-continues-6">&#x201C;Learning to See <wbr class="w480 w481 w960 w961 w1799"></wbr>Data,&#x201D;</a>explains that information analysts struggle similarly <wbr class="w480 w960"></wbr>to find ways <wbr class="w1800"></wbr>to recognize <wbr class="w481 w961 w1799"></wbr>patterns and organize large <wbr class="w480 w960"></wbr>amounts of digital content. Data analysts train with a <wbr class="w480 w481 w960 w961 w1799"></wbr>conceptual artist to <wbr class="w1800"></wbr>change their focus, learning a new <wbr class="w480 w960"></wbr>visual vocabulary of shapes, <wbr class="w481 w961 w1799"></wbr>rhythm, and space. These are <wbr class="w480 w960"></wbr>the same elements of <wbr class="w1800"></wbr>textile pattern that, unbeknownst to <wbr class="w480 w481 w960 w961 w1799"></wbr>most people, inspired the computer binary system in the <wbr class="w480 w960"></wbr>first place. Why not go <wbr class="w1800"></wbr>to the <wbr class="w481 w961 w1799"></wbr>source and learn from textiles <wbr class="w480 w960"></wbr>themselves, as Ada Lovelace (an inspiration for Ladyada <wbr class="w1799"></wbr>at <a href="https://www.adafruit.com/about" data-href="https://www.adafruit.com/about"><wbr class="w480 w481 w960 w961"></wbr>adafruit.net</a>) did <wbr class="w1800"></wbr>when she adapted binary code from <wbr class="w480 w960"></wbr>Jacquard looms to propose the <wbr class="w481 w961 w1799"></wbr>original computer language <wbr class="w480 w960"></wbr>for Charles Babbage&#x2019;s <wbr class="w1800"></wbr>Analytical Engine in the 1840s? <wbr class="w480 w960 w1799"></wbr>(Learn <wbr class="w481 w961"></wbr>more about Ada Lovelace from this <a href="http://www.bbc.co.uk/programmes/b0092j0x" data-href="http://www.bbc.co.uk/programmes/b0092j0x">In Our Time <wbr class="w480 w960"></wbr>podcast</a>.)</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="a2a86d12-adc7-46df-9a1e-fb43bcb665b9" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9"><div kind="group" index="column" class="group column group column" id="u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9-g-column-t-paragraph"><p><span class="first-letter">W</span>e already use a related concept in QR codes, a.k.a. 2D <wbr class="w480 w960"></wbr>barcodes. Links to a single <wbr class="w481 w1799"></wbr>website <wbr class="w961"></wbr>or coupon appear as <wbr class="w480 w960 w1800"></wbr>black/white checkerboard grids, familiar to any weaver as a <wbr class="w480 w481 w960 w961 w1799"></wbr>drawdown for designing cloth.</p><p><b data-grid-id="f5cffe82-ff07-4a8a-a688-d60ebc628255"><i data-grid-id="e4ee7da6-9116-481f-8ced-c8d2c331ebcf"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>But what if that coded pattern referred to a 3D structure, as it <wbr class="w480 w960"></wbr>does in textiles, enabling you to <wbr class="w481 w961 w1799"></wbr>access an entire database with <wbr class="w480 w960"></wbr>a <wbr class="w1800"></wbr>tap of your phone?</i></b></p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>O</span>r perhaps, mimicking the two faces of a damask weave <wbr class="w480 w960"></wbr>structure, digital data could <wbr class="w1799"></wbr>have <wbr class="w481 w961"></wbr>a front and back, and its <wbr class="w480 w960 w1800"></wbr>patterns be read differently from either side? These are <wbr class="w1799"></wbr>only <wbr class="w480 w481 w960 w961"></wbr>concepts, but since Lovelace recognized the information <wbr class="w480 w960 w1800"></wbr>system encoded in just <wbr class="w1799"></wbr>one type <wbr class="w481 w961"></wbr>of patterned weaving <wbr class="w480 w960"></wbr>structure, research into other textile forms seems <wbr class="w480 w960 w1799"></wbr>promising.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="99a06781-ea74-486d-ad3e-89cb8f14f14e" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-99a06781-ea74-486d-ad3e-89cb8f14f14e"><div kind="group" index="column" class="group column group column" id="u-99a06781-ea74-486d-ad3e-89cb8f14f14e-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-99a06781-ea74-486d-ad3e-89cb8f14f14e-g-column-t-paragraph"><p><span class="first-letter">T</span>ens of thousands of elegantly patterned structures await <wbr class="w480 w960"></wbr>the curious in textile archives <wbr class="w481 w961 w1799"></wbr>such as <a href="http://www.textilehive.com/" data-href="http://www.textilehive.com/">Textile Hive</a>. For <wbr class="w480 w960 w1800"></wbr>instance, this Meisen example offers a great lesson in the <wbr class="w480 w960 w1799"></wbr>visual <wbr class="w481 w961"></wbr>language of complex patterns that could be used in <wbr class="w480 w960 w1800"></wbr>many different applications, <wbr class="w1799"></wbr>such as <wbr class="w481 w961"></wbr>the design of layered <wbr class="w480 w960"></wbr>data planes. Imagine Data Set A and Data Set B collated <wbr class="w1799 w1800"></wbr>into <wbr class="w480 w960"></wbr>a <wbr class="w481"></wbr>system <wbr class="w961"></wbr>of rhythmic stripes, shapes, and structure. Voila, <wbr class="w480 w960"></wbr>you have discovered the <wbr class="w1799"></wbr>secret of <wbr class="w481 w961"></wbr>shadow weave <wbr class="w1800"></wbr>Meisen <wbr class="w480 w960"></wbr>fabric.</p><p><strong data-grid-id="4f54f10b-6517-45ce-a877-a6fbb6fd649c"><i data-grid-id="49155b03-fed7-4869-8ada-9b47e2319c17"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>The key is learning what to look for and going beyond the <wbr class="w480 w960"></wbr>surface image to understand how it <wbr class="w481 w961 w1799"></wbr>interacts with fabric <wbr class="w480 w960"></wbr>structure. <wbr class="w1800"></wbr>Becoming fluent in textile pattern and structure <wbr class="w480 w960"></wbr>opens <wbr class="w481 w961"></wbr>exciting <wbr class="w1799"></wbr>possibilities for future innovators. Re-<wbr class="w480 w960"></wbr>envisioning textiles as <wbr class="w1800"></wbr>a language for <wbr class="w481 w961"></wbr>designed <wbr class="w1799"></wbr>relationships <wbr class="w480 w960"></wbr>conjures up nearly limitless potential.</i></strong></p><p><strong data-grid-id="4f54f10b-6517-45ce-a877-a6fbb6fd649c"><i data-grid-id="4ed2c4e2-8fdc-4a8e-85ce-cbc95c7444f9"></i></strong></p><p><strong><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>About the Author</strong>:<a data-grid-id="be8fe9c8-430e-4f72-b8fc-f2f8b3e52877" href="http://www.anninbarrett.com/" data-href="http://www.anninbarrett.com">Annin Barrett</a> teaches textiles, art and <wbr class="w480 w960"></wbr>design history at The Art <wbr class="w481 w961 w1799"></wbr>Institute of Portland.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_medium_paragraph w_medium_text stack column" itemid="c0dfad2c-3682-424c-9d24-918ce97bc5f9" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-c0dfad2c-3682-424c-9d24-918ce97bc5f9"><div kind="group" index="column" class="group column group column" id="u-c0dfad2c-3682-424c-9d24-918ce97bc5f9-g-column"><div kind="text" index="paragraph" class="text-decoration medium medium_paragraph medium_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-c0dfad2c-3682-424c-9d24-918ce97bc5f9-g-column-t-paragraph"><p><strong>About Textile Hive</strong>: Based in Portland, Oregon,<a data-grid-id="33a7b920-5aff-407a-b9f4-7766ac21862b" href="http://www.textilehive.com/" data-href="http://www.textilehive.com">Textile <wbr class="w480"></wbr>Hive</a> <wbr class="w960"></wbr>houses and maintains the <wbr class="w481 w961 w1799"></wbr>largest fully digitized and <wbr class="w480 w960 w1800"></wbr>cataloged private textile collection in the world. Comprised <wbr class="w480 w960 w1799"></wbr>of <wbr class="w481 w961"></wbr>over 40,000 textiles spanning fifty countries the <wbr class="w480 w960 w1800"></wbr>collection was assembled by <wbr class="w1799"></wbr>renowned <wbr class="w481 w961"></wbr>fashion designer <wbr class="w480 w960"></wbr>and textile scholar <a href="http://www.textiledocs.com/" data-href="http://www.textiledocs.com">Andrea Aranow</a>. For over twenty years <wbr class="w480 w960 w1799"></wbr>the <wbr class="w1800"></wbr>collection <wbr class="w481 w961"></wbr>has served as a vital source of ideas for <wbr class="w480 w960"></wbr>thousands of fashion and interior <wbr class="w1799"></wbr>designers.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline-a">Textile Hive Stories feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text media_lt_wide media_lt_full w_medium_paragraph w_medium_text layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-3-l-one"></div><style id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-color">body{background-color: rgba(232, 232, 227, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text media_lt_wide media_lt_full w_medium_paragraph w_medium_text layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-3-l-one"></div><style id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-color">body{background-color: rgba(232, 232, 227, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+}</style></head><body><div class="layout-system rust mobile" id="page-17a575ca-f9bd-44b8-a91e-d96db6b5579b"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text media_lt_wide media_lt_full w_medium_paragraph w_medium_text layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-mobile-l-one-3-l-one"></div><style id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-color">body{background-color: rgba(232, 232, 227, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav"><div kind="group" index="heading" class="group heading group heading" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-nav-g-heading-t-headline-a">Textile Hive Stories</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack mixed i first_chapter w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text stack mixed" itemid="f60dd04e-d16a-44e6-aa22-3aa6d117cefa" itemtype="text" diff_index="0" index="mixed" kind="stack" score="5.875" missed="0.125" tag="article" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa"><div kind="group" index="mixed" class="group mixed group mixed" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed"><a kind="media" index="cover" class="vfld media cover media cover" specificity="0.25" itemprop="cover" max-width="3843" max-height="3159" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/dfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-m-cover"><picture id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/b57b533834f52236145bdbbc36242707/passthrough.jpg?height=592&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/3e8c8bb2a323610e3764059ea100ff7f/passthrough.jpg?height=1184&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1440 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e134a0288e650e5bc96830e86ea15ca2/passthrough.jpg?height=593&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/07e79b5bc8729f2fef89e0279d9121b3/passthrough.jpg?height=1186&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1440 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/afb0c8a5679c37a7cfef43858e879aaf/passthrough.jpg?height=316&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=385, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/6b6aad1eb69abaa5e03d5baaae24cb6e/passthrough.jpg?height=632&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=770 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5d8c9b87538886571734300279941750/passthrough.jpg?height=474&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c48e1d48c365a6f502b82896132a8cc6/passthrough.jpg?height=948&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1152 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/afb0c8a5679c37a7cfef43858e879aaf/passthrough.jpg?height=316&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=385, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/6b6aad1eb69abaa5e03d5baaae24cb6e/passthrough.jpg?height=632&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=770 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5d8c9b87538886571734300279941750/passthrough.jpg?height=474&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c48e1d48c365a6f502b82896132a8cc6/passthrough.jpg?height=948&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fdfe7032ccdbc6c04772bf7572bae598544a3fe4f.jpg&width=1152 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-headline"><span class="text-decoration" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-headline-span">Meisen Magic</span></h1><h2 kind="title" index="subtitle" class="short short_subtitle short_title title subtitle title subtitle" specificity="0.25" itemprop="subtitle" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-subtitle"><span class="text-decoration" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-subtitle-span">What do you see in this fabric?</span></h2><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-f60dd04e-d16a-44e6-aa22-3aa6d117cefa-g-mixed-t-paragraph"><p><span class="first-letter">L</span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>eaves appear suspended in a misty atmosphere, but <wbr class="w480 w960"></wbr>that&#x2019;s only the beginning. <wbr class="w1799"></wbr>You&#x2019;re <wbr class="w481 w961"></wbr>actually witnessing <wbr class="w480 w960"></wbr>the <wbr class="w1800"></wbr>collision of two pattern planes, one on the surface <wbr class="w1799"></wbr>and <wbr class="w480 w960"></wbr>one in <wbr class="w481 w961"></wbr>the structure, that seamlessly blend thousands of <wbr class="w480 w960 w1800"></wbr>threads for a stunning <wbr class="w1799"></wbr>visual effect. The <wbr class="w481 w961"></wbr>pattern seems to <wbr class="w480 w960"></wbr>hover in space, challenging your eye&#x2019;s perception. It&#x2019;s <wbr class="w1799"></wbr>an <wbr class="w480 w960 w1800"></wbr>optical illusion, <wbr class="w481 w961"></wbr>and like most good magic tricks, its secrets <wbr class="w480 w960"></wbr>are hidden in plain sight, <wbr class="w1799"></wbr>if you know where <wbr class="w481 w961"></wbr>to look.</p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><span class="first-letter">R</span>efocusing perception is the subject of <a data-grid-id="1d2a2068-7446-4b81-b715-35da2560aaa2" href="http://www.nytimes.com/2015/03/29/sunday-review/learning-to-see-data.html?_r=0">The New York <wbr class="w480 w960"></wbr>Times&#x2019; article, &#x201C;Learning to See <wbr class="w481 w961 w1799"></wbr>Data.&#x201D;</a>Scientific research <wbr class="w480 w960 w1800"></wbr>increasingly depends on massive quantities of digitized <wbr class="w480 w481 w960 w961 w1799"></wbr>information. In order to use it more effectively, analysts <wbr class="w480 w960"></wbr>and <wbr class="w1800"></wbr>artists are collaborating to <wbr class="w481 w961 w1799"></wbr>develop a system of <wbr class="w480 w960"></wbr>specialized pattern identification. However, textiles already <wbr class="w480 w960"></wbr>offer <wbr class="w1799"></wbr>an <wbr class="w481 w961 w1800"></wbr>encyclopedic catalog of patterns, and a nuanced <wbr class="w480 w960"></wbr>perceptual language for those who <wbr class="w481 w961 w1799"></wbr>understand it.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="8902b540-fa72-4b2e-ad04-a6d7e11564cd" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-8902b540-fa72-4b2e-ad04-a6d7e11564cd"><div kind="group" index="column" class="group column group column" id="u-8902b540-fa72-4b2e-ad04-a6d7e11564cd-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-8902b540-fa72-4b2e-ad04-a6d7e11564cd-g-column-t-paragraph"><p><span class="first-letter">A</span>da Lovelace, the 19th century inventor of computer <wbr class="w480 w960"></wbr>programming, realized this <wbr class="w481 w961 w1799"></wbr>connection between data <wbr class="w480 w960"></wbr>systems <wbr class="w1800"></wbr>and weaving. She wrote, &#x201C;The Analytical Engine <wbr class="w480 w960 w1799"></wbr>weaves <wbr class="w481 w961"></wbr>algebraic patterns just as the Jacquard loom weaves <wbr class="w480 w960"></wbr>flowers <wbr class="w1800"></wbr>and leaves.&#x201D; She <wbr class="w1799"></wbr>understood <wbr class="w481 w961"></wbr>how a matrix of pixels <wbr class="w480 w960"></wbr>could be organized into a type of language used to <wbr class="w480 w960 w1799"></wbr>mechanize <wbr class="w481 w961 w1800"></wbr>actions, just as Jacquard punch cards told the <wbr class="w480 w960"></wbr>loom what pattern to <wbr class="w1799"></wbr>construct. <wbr class="w481"></wbr>Continuing <wbr class="w961"></wbr>with this <wbr class="w480 w960"></wbr>analogy of <wbr class="w1800"></wbr>language/structure, could programmers <wbr class="w1799"></wbr>today <wbr class="w480 w960"></wbr>learn <wbr class="w481"></wbr>valuable models <wbr class="w961"></wbr>from other types of textile design?</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack mixed i w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_lt_wide media_lt_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="0cd1a66f-b856-47ae-bcf9-dfebb24adfba" itemtype="text" diff_index="0" index="mixed" kind="stack" score="3.625" missed="0.375" tag="article" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba"><div kind="group" index="mixed" class="group mixed group mixed" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="800" max-height="552" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed-m-cover"><picture id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/973acee721748a295efee6e60da48eef/passthrough.jpg?height=497&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=720, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/a8da090151562b070bb94fd043154f54/passthrough.jpg?height=497&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=721, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/391915fd82b3950e263f1943a93ee829/passthrough.jpg?height=265&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=385, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/16372b72be7d211ac7917f11955fccce/passthrough.jpg?height=530&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=770 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/46f503465f682f911f1304ae1332d5b6/passthrough.jpg?height=398&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=576, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f757746a2cb6df4fc19f95616108521e/passthrough.jpg?height=265&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=384, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/d46aa80d266778c7b874de891b0951bb/passthrough.jpg?height=530&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=768 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/aeab4c617ee12fb0558eccf8a66bbee6/passthrough.jpg?height=398&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=577, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/60e1f1114c6be667f62f896179e7c6e1/passthrough.jpg?height=552&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F3a2342ce5a896e014eb3b8edeee5da0dc2279702.jpg&width=800 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-0cd1a66f-b856-47ae-bcf9-dfebb24adfba-g-mixed-t-paragraph"><p><span class="first-letter">F</span>or example, this Meisen fabric from the <a data-grid-id="e637a2a3-d64a-4c6e-a9f7-5a40a2061136" href="http://textilehive.com/pages/the-collection">Andrea Aranow <wbr class="w480 w960"></wbr>Collection</a> found at <a data-grid-id="3c1ba486-b13f-4718-a79a-48760975b0b2" href="www.textilehive.com">Textile <wbr class="w481 w961 w1799"></wbr>Hive</a> represents a style of <wbr class="w480 w960 w1800"></wbr>Japanese kimono fabric popular during the 1920s and 30s. <wbr class="w480 w960 w1799"></wbr>With <wbr class="w481 w961"></wbr>Japanese fabrics especially, understanding how <wbr class="w480 w960 w1800"></wbr>they&#x2019;re made is like glimpsing a <wbr class="w1799"></wbr>profound <wbr class="w481 w961"></wbr>insight into the <wbr class="w480 w960"></wbr>designer&#x2019;s creative process. They use pattern as a poetic <wbr class="w480 w960 w1799 w1800"></wbr>language, <wbr class="w481 w961"></wbr>evoking shapes, rhythm, and space in <wbr class="w480 w960"></wbr>unexpected juxtaposition. Their <wbr class="w1799"></wbr>sleight-of-hand <wbr class="w481 w961"></wbr>visual <wbr class="w480 w960"></wbr>tricks <wbr class="w1800"></wbr>purposefully confound the ability to see what&#x2019;s truly <wbr class="w480 w960 w1799"></wbr>happening, so look <wbr class="w481 w961"></wbr>carefully.</p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><span class="first-letter">W</span>hat we see is a highly complex, layered pattern that at first <wbr class="w480 w960"></wbr>glance suggests <a data-grid-id="1fe33e3f-c4dc-469b-8389-f32e5fecac2c" href="http://www.vam.ac.uk/content/videos/j/video-jacquard-weaving/">a woven <wbr class="w481 w961 w1799"></wbr>Jacquard structure</a>. Upon <wbr class="w1800"></wbr>closer <wbr class="w480 w960"></wbr>inspection, the tiny yarns appear organized in the <wbr class="w1799"></wbr>basic <wbr class="w480 w481 w960 w961"></wbr>over-and-under sequence of plain weave. How can this <wbr class="w1800"></wbr>be? <wbr class="w480 w960"></wbr>The yarn is so fine that <wbr class="w1799"></wbr>we <wbr class="w481 w961"></wbr>need magnification to see the <wbr class="w480 w960"></wbr>true architecture of the weave.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="f052de7c-d7fa-4afa-8c5c-796748e157a2" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-f052de7c-d7fa-4afa-8c5c-796748e157a2"><div kind="group" index="column" class="group column group column" id="u-f052de7c-d7fa-4afa-8c5c-796748e157a2-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-f052de7c-d7fa-4afa-8c5c-796748e157a2-g-column-t-paragraph"><p><span class="first-letter">T</span>he warp-dominated plain weave gives us the first clue that <wbr class="w480 w960"></wbr>this is a Meisen fabric. <wbr class="w481 w961 w1799"></wbr>Amazingly, the entire leaf pattern <wbr class="w1800"></wbr>is <wbr class="w480 w960"></wbr>printed on these warp yarns only. They&#x2019;ve been <wbr class="w481 w961 w1799"></wbr>stretched <wbr class="w480 w960"></wbr>out first on a frame and loosely pre-woven. Then, colorful <wbr class="w480 w960 w1800"></wbr>dyes were stenciled <wbr class="w481 w961 w1799"></wbr>onto their surface to create the pattern <wbr class="w480 w960"></wbr>of pink and gray leaves.</p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><span class="first-letter">O</span>n an alternate frame, narrowly striped warp yarns in <wbr class="w480 w960"></wbr>contrasting shades of dark and <wbr class="w481 w961 w1799"></wbr>light gray are measured to <wbr class="w480 w960"></wbr>the <wbr class="w1800"></wbr>same length as the printed set of warps. These striped <wbr class="w480 w960 w1799"></wbr>yarns <wbr class="w481 w961"></wbr>supply the shadow weave effect in the finished fabric.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="14e34720-aa15-4d84-83f0-bf7330e19430" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-14e34720-aa15-4d84-83f0-bf7330e19430"><div kind="group" index="column" class="group column group column" id="u-14e34720-aa15-4d84-83f0-bf7330e19430-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-14e34720-aa15-4d84-83f0-bf7330e19430-g-column-t-paragraph"><p><span class="first-letter">N</span>ext, the stenciled warps are unwoven and strung onto a <wbr class="w480 w960"></wbr>weaving loom, with the <wbr class="w481 w961 w1799"></wbr>dark/light warp stripes alternated <wbr class="w480 w960 w1800"></wbr>throughout the pattern every three threads. After <wbr class="w1799"></wbr>this <wbr class="w481 w961"></wbr>time-<wbr class="w480 w960"></wbr>consuming labor, similarly striped weft yarns bring it all <wbr class="w480 w960 w1800"></wbr>together in a simple <wbr class="w1799"></wbr>plain <wbr class="w481 w961"></wbr>weave. Tiny crosshatches <wbr class="w480 w960"></wbr>populate the background, resulting from the dark/light <wbr class="w480 w960 w1799"></wbr>stripe <wbr class="w481 w961 w1800"></wbr>sequence in the weft meeting the dark/light stripes <wbr class="w480"></wbr>in <wbr class="w960"></wbr>the warp at right angles. <wbr class="w1799"></wbr>(John <wbr class="w481 w961"></wbr>Marshall&#x2019;s excellent blog <wbr class="w480"></wbr>post <wbr class="w960"></wbr>on <wbr class="w1800"></wbr>the <a data-grid-id="866d0a30-2873-4103-a2bd-674a7069d68f" href="http://johnmarshall.to/blog/2012/05/10/textile-of-the-weekmeisen-gasuri-%E9%8A%98%E4%BB%99%E7%B5%A3-201219/">Meisen process</a> helps explain these <wbr class="w480 w1799"></wbr>techniques.)</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full aspect_natural line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack mixed i w_cover w_media w_paragraph w_text w_decoration media_gte_narrow media_gte_half media_lt_wide media_lt_full media_landscape crop_true w_long_paragraph w_long_text stack mixed" itemid="806cc82d-a97e-4b09-abbc-19b795ef1b1c" itemtype="image" diff_index="0" index="mixed" kind="stack" score="3.625" missed="0.375" tag="article" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c"><div kind="group" index="mixed" class="group mixed group mixed" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed"><a kind="media" index="cover" class="vfld media cover vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="800" max-height="450" href="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed-m-cover"><picture id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" media="(min-width: 1441px)" /><source srcset="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" media="(min-width: 721px)" /><source srcset="https://s3-us-west-2.amazonaws.com/the-grid-img/p/94799bad8988242a6ef66beb152b907bfa9d2052.gif" media="(min-width: 1px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader text paragraph" specificity="0.25" itemprop="text" id="u-806cc82d-a97e-4b09-abbc-19b795ef1b1c-g-mixed-t-paragraph"><p><span class="first-letter">L</span>ustrous silk yarn and a pearlescent color palette add to the <wbr class="w480 w960"></wbr>visual intrigue with subtle, <wbr class="w481 w961 w1799"></wbr>reflective qualities. Three <wbr class="w480 w960 w1800"></wbr>shades of gray stripes flicker across the pattern, challenging <wbr class="w480 w481 w960 w961 w1799"></wbr>your mind&#x2019;s eye to complete the leaf shapes and <wbr class="w1800"></wbr>understand <wbr class="w480 w960"></wbr>their spatial relationship. <wbr class="w481 w1799"></wbr>The <wbr class="w961"></wbr>leaves seem to be falling <wbr class="w480 w960"></wbr>through air, and almost twisting in the light as <wbr class="w1800"></wbr>silvery <wbr class="w1799"></wbr>yarns <wbr class="w480 w481 w960 w961"></wbr>reflect the image. The pattern permeates the cloth, <wbr class="w480 w960"></wbr>involving the 3D structure as <wbr class="w1799"></wbr>well as <wbr class="w481 w961"></wbr>the 2D image. <wbr class="w480 w960 w1800"></wbr>Combining shadow weave stripes with stenciled warp <wbr class="w480 w960"></wbr>yarns, this <wbr class="w1799"></wbr>Meisen <wbr class="w481 w961"></wbr>fabric creates a masterful depiction of <wbr class="w480 w960"></wbr>space <wbr class="w1800"></wbr>that goes beyond its surface into <wbr class="w1799"></wbr>aesthetic <wbr class="w480 w481 w960 w961"></wbr>dimensions that fool and delight your eyes.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="b3ba6d70-46ce-41f4-aed3-f933c4294adf" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-b3ba6d70-46ce-41f4-aed3-f933c4294adf"><div kind="group" index="column" class="group column group column" id="u-b3ba6d70-46ce-41f4-aed3-f933c4294adf-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-b3ba6d70-46ce-41f4-aed3-f933c4294adf-g-column-t-paragraph"><p><span class="first-letter">A</span>n eloquent language of textile pattern exists in plain view, <wbr class="w480 w960"></wbr>hidden from most people <wbr class="w481 w961 w1799"></wbr>because they simply don&#x2019;t know <wbr class="w480 w960 w1800"></wbr>what to look for. The article, <a href="http://www.nytimes.com/2015/03/29/sunday-review/learning-to-see-data.html?_r=0#story-continues-6" data-href="http://www.nytimes.com/2015/03/29/sunday-review/learning-to-see-data.html?_r=0#story-continues-6">&#x201C;Learning to See <wbr class="w480 w481 w960 w961 w1799"></wbr>Data,&#x201D;</a>explains that information analysts struggle similarly <wbr class="w480 w960"></wbr>to find ways <wbr class="w1800"></wbr>to recognize <wbr class="w481 w961 w1799"></wbr>patterns and organize large <wbr class="w480 w960"></wbr>amounts of digital content. Data analysts train with a <wbr class="w480 w481 w960 w961 w1799"></wbr>conceptual artist to <wbr class="w1800"></wbr>change their focus, learning a new <wbr class="w480 w960"></wbr>visual vocabulary of shapes, <wbr class="w481 w961 w1799"></wbr>rhythm, and space. These are <wbr class="w480 w960"></wbr>the same elements of <wbr class="w1800"></wbr>textile pattern that, unbeknownst to <wbr class="w480 w481 w960 w961 w1799"></wbr>most people, inspired the computer binary system in the <wbr class="w480 w960"></wbr>first place. Why not go <wbr class="w1800"></wbr>to the <wbr class="w481 w961 w1799"></wbr>source and learn from textiles <wbr class="w480 w960"></wbr>themselves, as Ada Lovelace (an inspiration for Ladyada <wbr class="w1799"></wbr>at <wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><a href="https://www.adafruit.com/about" data-href="https://www.adafruit.com/about">adafruit.net</a>) did <wbr class="w1800"></wbr>when she adapted binary code from <wbr class="w480 w960"></wbr>Jacquard looms to propose the <wbr class="w481 w961 w1799"></wbr>original computer language <wbr class="w480 w960"></wbr>for Charles Babbage&#x2019;s <wbr class="w1800"></wbr>Analytical Engine in the 1840s? <wbr class="w480 w960 w1799"></wbr>(Learn <wbr class="w481 w961"></wbr>more about Ada Lovelace from this <a href="http://www.bbc.co.uk/programmes/b0092j0x" data-href="http://www.bbc.co.uk/programmes/b0092j0x">In Our Time <wbr class="w480 w960"></wbr>podcast</a>.)</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="a2a86d12-adc7-46df-9a1e-fb43bcb665b9" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9"><div kind="group" index="column" class="group column group column" id="u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-a2a86d12-adc7-46df-9a1e-fb43bcb665b9-g-column-t-paragraph"><p><span class="first-letter">W</span>e already use a related concept in QR codes, a.k.a. 2D <wbr class="w480 w960"></wbr>barcodes. Links to a single <wbr class="w481 w1799"></wbr>website <wbr class="w961"></wbr>or coupon appear as <wbr class="w480 w960 w1800"></wbr>black/white checkerboard grids, familiar to any weaver as a <wbr class="w480 w481 w960 w961 w1799"></wbr>drawdown for designing cloth.</p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><b data-grid-id="f5cffe82-ff07-4a8a-a688-d60ebc628255"><i data-grid-id="e4ee7da6-9116-481f-8ced-c8d2c331ebcf">But what if that coded pattern referred to a 3D structure, as it <wbr class="w480 w960"></wbr>does in textiles, enabling you to <wbr class="w481 w961 w1799"></wbr>access an entire database with <wbr class="w480 w960"></wbr>a <wbr class="w1800"></wbr>tap of your phone?</i></b></p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><span class="first-letter">O</span>r perhaps, mimicking the two faces of a damask weave <wbr class="w480 w960"></wbr>structure, digital data could <wbr class="w1799"></wbr>have <wbr class="w481 w961"></wbr>a front and back, and its <wbr class="w480 w960 w1800"></wbr>patterns be read differently from either side? These are <wbr class="w1799"></wbr>only <wbr class="w480 w481 w960 w961"></wbr>concepts, but since Lovelace recognized the information <wbr class="w480 w960 w1800"></wbr>system encoded in just <wbr class="w1799"></wbr>one type <wbr class="w481 w961"></wbr>of patterned weaving <wbr class="w480 w960"></wbr>structure, research into other textile forms seems <wbr class="w480 w960 w1799"></wbr>promising.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="99a06781-ea74-486d-ad3e-89cb8f14f14e" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-99a06781-ea74-486d-ad3e-89cb8f14f14e"><div kind="group" index="column" class="group column group column" id="u-99a06781-ea74-486d-ad3e-89cb8f14f14e-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-99a06781-ea74-486d-ad3e-89cb8f14f14e-g-column-t-paragraph"><p><span class="first-letter">T</span>ens of thousands of elegantly patterned structures await <wbr class="w480 w960"></wbr>the curious in textile archives <wbr class="w481 w961 w1799"></wbr>such as <a href="http://www.textilehive.com/" data-href="http://www.textilehive.com/">Textile Hive</a>. For <wbr class="w480 w960 w1800"></wbr>instance, this Meisen example offers a great lesson in the <wbr class="w480 w960 w1799"></wbr>visual <wbr class="w481 w961"></wbr>language of complex patterns that could be used in <wbr class="w480 w960 w1800"></wbr>many different applications, <wbr class="w1799"></wbr>such as <wbr class="w481 w961"></wbr>the design of layered <wbr class="w480 w960"></wbr>data planes. Imagine Data Set A and Data Set B collated <wbr class="w1799 w1800"></wbr>into <wbr class="w480 w960"></wbr>a <wbr class="w481"></wbr>system <wbr class="w961"></wbr>of rhythmic stripes, shapes, and structure. Voila, <wbr class="w480 w960"></wbr>you have discovered the <wbr class="w1799"></wbr>secret of <wbr class="w481 w961"></wbr>shadow weave <wbr class="w1800"></wbr>Meisen <wbr class="w480 w960"></wbr>fabric.</p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><strong data-grid-id="4f54f10b-6517-45ce-a877-a6fbb6fd649c"><i data-grid-id="49155b03-fed7-4869-8ada-9b47e2319c17">The key is learning what to look for and going beyond the <wbr class="w480 w960"></wbr>surface image to understand how it <wbr class="w481 w961 w1799"></wbr>interacts with fabric <wbr class="w480 w960"></wbr>structure. <wbr class="w1800"></wbr>Becoming fluent in textile pattern and structure <wbr class="w480 w960"></wbr>opens <wbr class="w481 w961"></wbr>exciting <wbr class="w1799"></wbr>possibilities for future innovators. Re-<wbr class="w480 w960"></wbr>envisioning textiles as <wbr class="w1800"></wbr>a language for <wbr class="w481 w961"></wbr>designed <wbr class="w1799"></wbr>relationships <wbr class="w480 w960"></wbr>conjures up nearly limitless potential.</i></strong></p><p><strong data-grid-id="4f54f10b-6517-45ce-a877-a6fbb6fd649c"><i data-grid-id="4ed2c4e2-8fdc-4a8e-85ce-cbc95c7444f9"></i></strong></p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><strong>About the Author</strong>:<a data-grid-id="be8fe9c8-430e-4f72-b8fc-f2f8b3e52877" href="http://www.anninbarrett.com/" data-href="http://www.anninbarrett.com">Annin Barrett</a> teaches textiles, art and <wbr class="w480 w960"></wbr>design history at The Art <wbr class="w481 w961 w1799"></wbr>Institute of Portland.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_medium_paragraph w_medium_text stack column" itemid="c0dfad2c-3682-424c-9d24-918ce97bc5f9" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-c0dfad2c-3682-424c-9d24-918ce97bc5f9"><div kind="group" index="column" class="group column group column" id="u-c0dfad2c-3682-424c-9d24-918ce97bc5f9-g-column"><div kind="text" index="paragraph" class="text-decoration medium medium_paragraph medium_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-c0dfad2c-3682-424c-9d24-918ce97bc5f9-g-column-t-paragraph"><p><strong>About Textile Hive</strong>: Based in Portland, Oregon,<a data-grid-id="33a7b920-5aff-407a-b9f4-7766ac21862b" href="http://www.textilehive.com/" data-href="http://www.textilehive.com">Textile <wbr class="w480"></wbr>Hive</a> <wbr class="w960"></wbr>houses and maintains the <wbr class="w481 w961 w1799"></wbr>largest fully digitized and <wbr class="w480 w960 w1800"></wbr>cataloged private textile collection in the world. Comprised <wbr class="w480 w960 w1799"></wbr>of <wbr class="w481 w961"></wbr>over 40,000 textiles spanning fifty countries the <wbr class="w480 w960 w1800"></wbr>collection was assembled by <wbr class="w1799"></wbr>renowned <wbr class="w481 w961"></wbr>fashion designer <wbr class="w480 w960"></wbr>and textile scholar <a href="http://www.textiledocs.com/" data-href="http://www.textiledocs.com">Andrea Aranow</a>. For over twenty years <wbr class="w480 w960 w1799"></wbr>the <wbr class="w1800"></wbr>collection <wbr class="w481 w961"></wbr>has served as a vital source of ideas for <wbr class="w480 w960"></wbr>thousands of fashion and interior <wbr class="w1799"></wbr>designers.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-alternate-g-heading-t-headline-a">Textile Hive Stories feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text media_lt_wide media_lt_full w_medium_paragraph w_medium_text layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-desktop-l-one-3-l-one"></div><style id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-color">body{background-color: rgba(232, 232, 227, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_cover w_media w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_trailer media_gte_narrow media_gte_half media_gte_wide media_gte_full media_landscape crop_true w_short_headline w_short_title w_short_subtitle w_long_paragraph w_long_text media_lt_wide media_lt_full w_medium_paragraph w_medium_text layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-cinema-l-one-3-l-one"></div><style id="u-17a575ca-f9bd-44b8-a91e-d96db6b5579b-color">body{background-color: rgba(232, 232, 227, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -2020,7 +2096,7 @@ module.exports = function() {
 
 
 },{}],5:[function(require,module,exports){
-var cache, fade, frames, hiding, highlighting, showing;
+var Hide, Show, cache, fade, frames, hiding, highlighting, showing;
 
 highlighting = showing = hiding = null;
 
@@ -2047,40 +2123,69 @@ fade = function(element, to, from) {
   return frames[element.id] = requestAnimationFrame(Frame);
 };
 
+document.body.addEventListener('mousemove', function(e) {});
+
+Hide = function(target) {
+  clearTimeout(showing);
+  setTimeout(function() {
+    if (hiding !== target) {
+      hiding.style.backgroundImage = cache[hiding.id];
+      return delete cache[hiding.id];
+    }
+  }, 300);
+  hiding = highlighting;
+  highlighting = null;
+  return fade(hiding.getElementsByTagName('img')[0], 1);
+};
+
+Show = function(target, x, y, img) {
+  var colors, value;
+  if (target !== highlighting) {
+    clearTimeout(showing);
+    showing = setTimeout(function() {
+      if (highlighting === target) {
+        return fade(img, 0.8);
+      }
+    }, 150);
+  }
+  if ((value = cache[target.id]) == null) {
+    cache[target.id] = value = window.getComputedStyle(target)['background-image'];
+  }
+  if (value.indexOf('linear-gradient') > -1) {
+    colors = value.match(/rgba?\((.*?)\)|black|white|transparent/g);
+    if (colors[1].indexOf('rgba') > -1) {
+      colors[1] = colors[1].replace(/,\s*[\d\.]+\)/, ', 0.7)');
+    } else {
+      colors[1] = colors[1].replace('rgb', 'rgba').replace(/\)/, ', 0.7)');
+    }
+    value = 'radial-gradient(circle at ' + x + 'px ' + y + 'px, rgba(255,255,255,0.5) -10%, ' + colors[1] + ' 25%, ' + colors[0] + ' 90%)';
+  } else {
+    return;
+  }
+  target.style.backgroundImage = value;
+  return highlighting = target;
+};
+
+document.body.addEventListener('click', function(e) {
+  if (highlighting) {
+    return Hide(highlighting);
+  }
+});
+
 document.body.addEventListener('mousemove', function(e) {
-  var clientX, clientY, colors, img, parent, ref, target, value;
+  var clientX, clientY, img, parent, ref, target;
   target = e.target;
   while (target) {
-    if (target.tagName === 'A' && target.classList.contains('media')) {
+    if (target.tagName === 'A' && target.classList.contains('media') && !target.classList.contains('revealed')) {
       break;
     }
     target = target.parentNode;
   }
   if (highlighting && highlighting !== target) {
-    clearTimeout(showing);
-    setTimeout(function() {
-      if (hiding !== target) {
-        hiding.style.backgroundImage = cache[hiding.id];
-        return delete cache[hiding.id];
-      }
-    }, 300);
-    hiding = highlighting;
-    highlighting = null;
-    fade(hiding.getElementsByTagName('img')[0], 1);
+    Hide(highlighting);
   }
   if (target) {
     if ((ref = (img = target.getElementsByTagName('img')[0])) != null ? ref.complete : void 0) {
-      if (target !== highlighting) {
-        clearTimeout(showing);
-        showing = setTimeout(function() {
-          if (highlighting === target) {
-            return fade(img, 0.8);
-          }
-        }, 150);
-      }
-      if ((value = cache[target.id]) == null) {
-        cache[target.id] = value = window.getComputedStyle(target)['background-image'];
-      }
       clientX = e.pageX;
       clientY = e.pageY;
       parent = target;
@@ -2089,19 +2194,7 @@ document.body.addEventListener('mousemove', function(e) {
         clientY -= parent.offsetTop;
         parent = parent.offsetParent;
       }
-      if (value.indexOf('linear-gradient') > -1) {
-        colors = value.match(/rgba?\((.*?)\)|black|white|transparent/g);
-        if (colors[1].indexOf('rgba') > -1) {
-          colors[1] = colors[1].replace(/,\s*[\d\.]+\)/, ', 0.7)');
-        } else {
-          colors[1] = colors[1].replace('rgb', 'rgba').replace(/\)/, ', 0.7)');
-        }
-        value = 'radial-gradient(circle at ' + clientX + 'px ' + clientY + 'px, rgba(255,255,255,0.5) -10%, ' + colors[1] + ' 25%, ' + colors[0] + ' 90%)';
-      } else {
-        return;
-      }
-      target.style.backgroundImage = value;
-      return highlighting = target;
+      return Show(target, clientX, clientY, img);
     }
   }
 });
@@ -2249,11 +2342,13 @@ module.exports = function() {
 
 
 },{"./reflow":9}],8:[function(require,module,exports){
-var Player, Youtube, iframe, revealed, rgb2hex;
+var Player, Youtube, iframe, reflow, revealed, rgb2hex;
 
 iframe = null;
 
 Youtube = null;
+
+reflow = require('./reflow');
 
 Player = function(id, src, width, height, color, bg) {
   if (src.indexOf('youtube') > -1) {
@@ -2262,6 +2357,8 @@ Player = function(id, src, width, height, color, bg) {
   src = src.replace('COLOR', color).replace('BG', bg);
   if (location.protocol !== 'https:') {
     src = src.replace('https:', 'http:');
+  } else {
+    src = src.replace('http:', 'https:');
   }
   iframe = document.createElement('iframe');
   iframe.id = id;
@@ -2274,79 +2371,294 @@ Player = function(id, src, width, height, color, bg) {
   iframe.style.left = 0;
   iframe.style.right = 0;
   iframe.style.position = 'absolute';
-  iframe.style.opacity = 0.2;
+  iframe.style.opacity = 0;
   iframe.onload = function() {
-    return iframe.style.opacity = 1;
+    return iframe.showing = setTimeout(function() {
+      iframe.classList.add('loaded');
+      iframe.style.display = '';
+      iframe.showing = setTimeout(function() {
+        iframe.style.opacity = 1;
+        return iframe.showing = setTimeout(function() {
+          return typeof iframe.onloaded === "function" ? iframe.onloaded(true) : void 0;
+        }, 500);
+      }, 1);
+      return typeof iframe.onloaded === "function" ? iframe.onloaded() : void 0;
+    }, 300);
   };
   return iframe;
 };
 
 revealed = null;
 
-Player.reveal = function(iframe) {
-  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
-  while (target = (target || iframe).parentNode) {
-    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
-      if (target.parentNode.classList.contains('group')) {
-        parent = target.parentNode;
-      } else {
-        parent = target;
+Player.findMedia = function(iframe) {
+  var i, len, media, ref, ref1, ref2, sibling;
+  if (iframe.parentNode) {
+    ref = iframe.parentNode.childNodes;
+    for (i = 0, len = ref.length; i < len; i++) {
+      sibling = ref[i];
+      if ((ref1 = sibling.classList) != null ? ref1.contains('media') : void 0) {
+        return sibling;
       }
-      revealed = iframe;
-      play = parent.getElementsByClassName('play')[0];
-      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
-      top = -play.offsetTop;
-      play.style.webkitTransformOrigin = 'top right';
-      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
-      target.classList.add('revealed');
-      ref1 = parent.parentNode.childNodes;
-      for (i = 0, len = ref1.length; i < len; i++) {
-        sibling = ref1[i];
-        if (sibling.nodeType === 1 && sibling !== parent) {
-          translateX = translateY = null;
-          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
-            translateX = -diff;
-          }
-          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
-            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
-              translateX = diff;
-            }
-          }
-          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
-            translateY = -diff;
-          }
-          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
-            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
-              translateY = diff;
-            }
-          }
-          if (Math.abs(translateX) > Math.abs(translateY)) {
-            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
-          } else {
-            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
-          }
-          console.log(translateX, translateY, sibling);
-        }
+    }
+    while (media = (media || iframe).parentNode) {
+      if ((ref2 = media.classList) != null ? ref2.contains('media') : void 0) {
+        return media;
       }
     }
   }
 };
 
+Player.getClipRect = function(img, media) {
+  var rect;
+  rect = {};
+  rect.left = -img.offsetLeft;
+  rect.right = -img.offsetLeft + img.parentNode.offsetWidth;
+  rect.top = -img.offsetTop;
+  rect.bottom = img.offsetTop + img.parentNode.offsetHeight;
+  return rect;
+};
+
+Player.rect = function(rect) {
+  return 'rect(' + rect.top + 'px,' + rect.right + 'px,' + rect.bottom + 'px,' + rect.left + 'px)';
+};
+
+Player.set = function(element, property, value) {
+  var webkit;
+  webkit = 'webkit' + property.charAt(0).toUpperCase() + property.substring(1);
+  if (element.style[webkit] != null) {
+    return element.style[webkit] = value;
+  } else {
+    return element.style[property] = value;
+  }
+};
+
+Player.reveal = function(iframe, instant) {
+  var firstTime, img, layout, left, media, offsetLeft, offsetTop, parent, play, ratio, rectLeft, rectRight, ref, root, shiftLeft, stack, targetHeight, targetWidth, top, translateX, translateY, zoom;
+  iframe.style.maxHeight = window.innerHeight + 'px';
+  if (media = Player.findMedia(iframe)) {
+    if ((ref = media.classList) != null ? ref.contains('media') : void 0) {
+      root = stack = media;
+      while (root = root.parentNode) {
+        if (root.classList.contains('stack')) {
+          stack = root;
+        }
+        if (root.classList.contains('layout-system')) {
+          break;
+        }
+      }
+      layout = reflow.getLayout(root, stack);
+      console.log('get layout', root, stack, layout);
+      img = media.querySelector('picture, img');
+      offsetLeft = media.offsetLeft;
+      offsetTop = media.offsetTop;
+      if (media.parentNode.classList.contains('group')) {
+        parent = media.parentNode;
+        offsetLeft += parent.offsetLeft;
+        offsetTop += parent.offsetTop;
+      } else {
+        parent = media;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      Player.set(play, 'transformOrigin', 'top right');
+      if (!media.classList.contains('revealed')) {
+        firstTime = true;
+        media.classList.add('revealed');
+      }
+      if (layout && (layout.offsetWidth > media.offsetWidth * 2.5 || media.offsetWidth < 350 || media.offsetHeight < 200) && iframe.src.indexOf('soundcloud') === -1) {
+        if (firstTime) {
+          Player.set(img, 'transition', 'none');
+          img.style.clip = Player.rect(Player.getClipRect(img));
+          return requestAnimationFrame(function() {
+            Player.set(img, 'transition', '');
+            return requestAnimationFrame(function() {
+              return Player.reveal(iframe);
+            });
+          });
+        }
+        iframe.style.zIndex = 6;
+        media.classList.add('expanded');
+        translateX = -offsetLeft - stack.offsetLeft;
+        translateY = -offsetTop - stack.offsetTop;
+        if (stack.parentNode !== layout) {
+          translateX += layout.offsetLeft + layout.parentNode.offsetLeft;
+          translateY += layout.offsetTop + layout.parentNode.offsetTop;
+        }
+        Player.set(img, 'transform', img.style.transform = 'translateX(' + (translateX - img.offsetLeft) + 'px) ' + 'translateY(' + (translateY - img.offsetTop) + 'px) ');
+        if (img) {
+          Player.set(media, 'transformOrigin', 'top left');
+          Player.set(img, 'transformOrigin', 'top left');
+          ratio = img.offsetWidth / img.offsetHeight;
+          targetHeight = Math.min(layout.offsetHeight, window.innerHeight);
+          targetWidth = ratio * targetHeight;
+          console.log(layout, layout.offsetHeight, targetHeight, 44444);
+          iframe.style.left = translateX + media.offsetLeft + 'px';
+          iframe.style.top = translateY + media.offsetTop + 'px';
+          iframe.style.width = layout.offsetWidth + 'px';
+          iframe.style.height = layout.offsetHeight + 'px';
+          zoom = targetHeight / img.offsetHeight;
+          shiftLeft = (layout.offsetWidth - targetWidth) / 2;
+          rectLeft = rectRight = Math.max(0, -shiftLeft / zoom);
+          if (media.style.overflow !== 'visible') {
+            requestAnimationFrame(function() {
+              media.style.overflow = 'visible';
+              stack.style.overflow = 'visible';
+              img.style.clip = Player.rect(Player.getClipRect(img));
+              return requestAnimationFrame(function() {
+                return img.style.clip = 'rect(0px, ' + (img.offsetWidth - rectRight) + 'px, ' + img.offsetHeight + 'px, ' + rectLeft + 'px)';
+              });
+            });
+          } else {
+            img.style.clip = 'rect(0px, ' + (img.offsetWidth - rectRight) + 'px, ' + img.offsetHeight + 'px, ' + rectLeft + 'px)';
+          }
+          if (img.style.webkitTransform) {
+            img.style.webkitTransform += ' translateX(' + shiftLeft + 'px)  scale(' + zoom.toFixed(3) + ') ';
+          } else if (img.style.transform) {
+            img.style.transform += ' translateX(' + shiftLeft + 'px)  scale(' + zoom.toFixed(3) + ') ';
+          }
+          left = translateX + layout.offsetWidth - play.offsetLeft - play.offsetWidth;
+          top = translateY - play.offsetTop;
+          Player.set(play, 'transform', 'translateX(' + (left - 10) + 'px) ' + 'translateY(' + (top + 10) + 'px) ' + 'scale(0.5)');
+        }
+        stack.style.zIndex = 10;
+        if (iframe.style.opacity === 1) {
+          Player.fade(parent, true, media);
+        } else {
+          iframe.onloaded = function(full) {
+            return Player.fade(parent, full, media);
+          };
+        }
+      } else {
+        media.classList.remove('expanded');
+        left = media.offsetWidth - play.offsetLeft - play.offsetWidth;
+        top = -play.offsetTop;
+        Player.set(play, 'transform', 'translateX(' + (left - 5) + 'px) translateY(' + (top + 5) + 'px) scale(0.5)');
+        iframe.style.left = media.offsetLeft + 'px';
+        iframe.style.top = media.offsetTop + 'px';
+        iframe.style.width = media.offsetWidth + 'px';
+        iframe.style.height = media.offsetHeight + 'px';
+        if (iframe.style.opacity === 1) {
+          img.style.opacity = 0;
+        } else {
+          iframe.onloaded = function(full) {
+            console.error('ONLOADED', full);
+            if (full) {
+              return img.style.opacity = 0;
+            } else {
+              return img.style.opacity = 0.8;
+            }
+          };
+        }
+        Player.expose(parent);
+      }
+    }
+  }
+};
+
+Player.fade = function(parent, full, media) {
+  var i, len, ref, results, sibling;
+  if (media) {
+    sibling = media.querySelector('picture, img');
+    if (full) {
+      sibling.style.opacity = 0;
+    }
+  }
+  ref = parent.parentNode.childNodes;
+  results = [];
+  for (i = 0, len = ref.length; i < len; i++) {
+    sibling = ref[i];
+    if (sibling.nodeType === 1 && sibling !== parent && sibling.tagName !== 'IFRAME' && !sibling.classList.contains('play')) {
+      if (full) {
+        results.push(sibling.style.opacity = 0);
+      } else {
+        results.push(sibling.style.opacity = 0.8);
+      }
+    } else {
+      results.push(void 0);
+    }
+  }
+  return results;
+};
+
+Player.expose = function(parent) {
+  var diff, i, len, ref, results, sibling, translateX, translateY;
+  ref = parent.parentNode.childNodes;
+  results = [];
+  for (i = 0, len = ref.length; i < len; i++) {
+    sibling = ref[i];
+    if (sibling.nodeType === 1 && sibling !== parent && sibling.tagName !== 'IFRAME') {
+      translateX = translateY = null;
+      if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+        translateX = -diff - 2;
+      }
+      if ((diff = parent.offsetLeft + parent.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+        if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+          translateX = diff + 2;
+        }
+      }
+      if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+        translateY = -diff - 2;
+      }
+      if ((diff = parent.offsetTop + parent.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+        if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+          translateY = diff + 2;
+        }
+      }
+      if (Math.abs(translateX) > Math.abs(translateY)) {
+        results.push(Player.set(sibling, 'transform', 'translateY(' + translateY + 'px)'));
+      } else {
+        results.push(Player.set(sibling, 'transform', 'translateX(' + translateX + 'px)'));
+      }
+    } else {
+      results.push(void 0);
+    }
+  }
+  return results;
+};
+
 Player.hide = function(iframe) {
-  var i, len, parent, play, ref, ref1, sibling;
-  while (parent = (parent || iframe).parentNode) {
-    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
-      parent.classList.remove('revealed');
+  var child, i, img, j, len, len1, media, parent, play, ref, ref1, ref2, ref3, sibling;
+  if (media = Player.findMedia(iframe)) {
+    if ((ref = media.classList) != null ? ref.contains('revealed') : void 0) {
+      media.classList.remove('revealed');
+      media.classList.remove('expanded');
+      Player.set(media, 'transform', '');
+      if (img = media.querySelector('picture, img')) {
+        img.style.zIndex = '';
+        img.style.opacity = '';
+        if (media.style.overflow === 'visible') {
+          img.style.clip = Player.rect(Player.getClipRect(img));
+          setTimeout(function() {
+            img.style.clip = '';
+            return media.style.overflow = '';
+          }, 300);
+        }
+      }
+      ref1 = media.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        child = ref1[i];
+        Player.set(child, 'transform', '');
+      }
+      parent = media;
       if (parent.parentNode.classList.contains('group')) {
         parent = parent.parentNode;
       }
       play = parent.getElementsByClassName('play')[0];
-      play.style.webkitTransform = '';
-      ref1 = parent.parentNode.childNodes;
-      for (i = 0, len = ref1.length; i < len; i++) {
-        sibling = ref1[i];
-        sibling.style.webkitTransform = '';
+      play.style.zIndex = '';
+      Player.set(play, 'transform', '');
+      ref2 = parent.parentNode.childNodes;
+      for (j = 0, len1 = ref2.length; j < len1; j++) {
+        sibling = ref2[j];
+        if (sibling.nodeType === 1 && sibling !== iframe) {
+          Player.set(sibling, 'transform', '');
+          sibling.style.opacity = '';
+        }
       }
+      if (!((ref3 = (parent = parent.parentNode).classList) != null ? ref3.contains('stack') : void 0)) {
+        parent = parent.parentNode;
+      }
+      parent.style.zIndex = '';
+      parent.style.visible = '';
     }
   }
   return revealed = null;
@@ -2370,29 +2682,32 @@ Player.stop = function(iframe) {
   var old;
   old = iframe;
   iframe.style.opacity = 0;
+  iframe.style.width = iframe.offsetWidth + 'px';
+  iframe.style.height = iframe.offsetHeight + 'px';
   setTimeout(function() {
     var ref;
     return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
   }, 300);
+  clearTimeout(iframe.showing);
   Player.hide(iframe);
   return iframe = null;
 };
 
 document.addEventListener('click', function(e) {
-  var bg, color, header, parent, play, ref, ref1, results, styles, target;
-  target = e.target;
+  var bg, color, header, media, parent, play, ref, ref1, results, styles;
+  media = e.target;
   results = [];
-  while (target) {
-    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
-      if (play = target.getElementsByClassName('play')[0]) {
-        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+  while (media) {
+    if ((ref = media.classList) != null ? ref.contains('media') : void 0) {
+      if (play = media.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === media || (iframe != null ? iframe.parentNode : void 0) === media.parentNode) {
           Player.stop(iframe);
         } else {
           if (iframe) {
             Player.stop(iframe);
           }
           color = bg = null;
-          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          header = (ref1 = media.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
           parent = header || play;
           while (parent) {
             if (parent.nodeType === 1) {
@@ -2411,14 +2726,14 @@ document.addEventListener('click', function(e) {
             parent = parent.parentNode;
           }
           iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
-          target.appendChild(iframe);
+          media.parentNode.insertBefore(iframe, media);
           Player.reveal(iframe);
         }
         e.preventDefault();
         break;
       }
     }
-    results.push(target = target.parentNode);
+    results.push(media = media.parentNode);
   }
   return results;
 });
@@ -2433,7 +2748,7 @@ rgb2hex = function(rgb) {
 window.exports = window.Player = Player;
 
 
-},{}],9:[function(require,module,exports){
+},{"./reflow":9}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
